@@ -1,5 +1,5 @@
-Machine Learning with a View Towards Deep Learning
-==================================================
+Practical Deep Neural Networks
+==============================
 
 Deep learning seems to be all the rage nowadays. With the
 recent advances in deep learning, especially the success
