@@ -2,15 +2,19 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:               Practical Machine Learning
 tagline:             With a Deep Learning Bias
 url:                 https://evilwire.github.io/dnnbook
+gems:
+    - jekyll-paginate
+    - jekyll-gist
+    - redcarpet
 paginate:            1
+paginate_path:       "page:num"
 baseurl:             ""
-
+markdown:            redcarpet
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
