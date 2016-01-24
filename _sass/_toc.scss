@@ -1,0 +1,24 @@
+// ToC
+//
+// For styling everything with table of contents
+
+div.toc {
+  position: fixed;
+  width: 20%; 
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-left: 2vw;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+
+  .post-title {
+    color: #aaa;
+    font-size: 1.3vw;
+    font-weight: 200;
+  }
+}
+
+div.toc.closed {
+  left: -20%;
+}

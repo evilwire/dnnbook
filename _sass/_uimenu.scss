@@ -1,0 +1,21 @@
+// UI Menu
+//
+// Styling the UI menu on the size
+
+#ui-menu {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  color: #aaa;
+
+  .menu-item {
+    cursor: pointer;
+
+    :hover {
+      color: #666;
+    }
+  }
+
+}
