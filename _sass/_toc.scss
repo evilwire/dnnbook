@@ -7,15 +7,38 @@ div.toc {
   width: 20%; 
   height: 100%;
   top: 0;
-  left: 0;
+  left: 60px;
   padding-left: 2vw;
-  -webkit-transition: left 1s;
-  transition: left 1s;
+  padding-top: 20px;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+
+  ul {
+    padding-left: 0px;
+
+    li {
+      list-style-type: none;
+    }
+  }
 
   .post-title {
     color: #aaa;
     font-size: 1.3vw;
     font-weight: 200;
+  }
+
+  .close-button {
+    float: right;
+    cursor: pointer;
+    color: rgba(120, 120, 120, .3);
+
+    :hover {
+      color: rgba(120, 120, 120, 1);
+    }
+
+    .material-icons {
+      font-size: 20px;
+    }
   }
 }
 

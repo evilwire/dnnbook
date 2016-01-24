@@ -37,15 +37,64 @@
    * Expects: elt is a jquery object with html property
    */
   function render(elt, setDM) {
-    console.log("Rendering " + elt.innerHTML);
+    //console.log("Rendering " + elt.innerHTML);
     katex.render(elt.innerHTML, elt, {
       displayMath: setDM
     })
   }
 
+  function closeTOC(button) {
+    button.attr("state", "hide");
+    button.removeClass("active");
+    var tocMenu = $(".toc");
+    tocMenu.addClass("closed");
+    $(".container").css("left", "0px");
+  }
+
+  var UI_FUNCTIONS = {
+    "toc-toggle": {
+      click: function(event) {
+        if ($(this).attr("state") == "hide") {
+          $(this).attr("state", "show");
+          $(this).addClass("active");
+
+          var tocMenu = $(".toc.closed");
+          tocMenu.removeClass("closed");
+          $(".container").css("left", String(
+            tocMenu.outerWidth() * 0.5
+          ) + "px");         
+        } else {
+          closeTOC($(this));
+        }
+      },
+
+      init: function(item) {
+        $(".toc .close-button").on("click", function(event){
+          closeTOC(item);
+        });
+      }
+    }
+  };
+  function buildUIMenu(uiMenu) {
+    uiMenu.find(".menu-item").each(function(index){
+      var itemName = $(this).attr("for");
+      if (itemName in UI_FUNCTIONS) {
+        for (var key in UI_FUNCTIONS[itemName]) {
+          if (key == "init"){
+            UI_FUNCTIONS[itemName][key].call(null, $(this));
+          } else {
+            $(this).on(key, UI_FUNCTIONS[itemName][key]);
+          }
+        }
+      }
+    });
+  }
+
   window.onload = function(event) {
     $(".inline-math").each(function(index){ render(this, true); });
     $(".display-math").each(function(index){ render(this, false); });
+
+    buildUIMenu($("#ui-menu"));
   };
   </script>
 </head>

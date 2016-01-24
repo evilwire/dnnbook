@@ -7,7 +7,7 @@ title: Home
   UI Menu for some readability boosts
 -->
 <div id="ui-menu">
-  <div class="menu-item toc-toggles">
+  <div class="menu-item" for="toc-toggle" state="hide">
     <i class="material-icons">menu</i>
   </div>
 </div>
@@ -18,12 +18,20 @@ title: Home
   Auto generated content
 -->
 <div class="toc closed">
-  <h3 class="title">ToC</h3>
+  <div class="close-button">
+    <i class="material-icons">keyboard_backspace</i> 
+  </div>
+  <ul>
 {% for post in site.posts %}
 {% if post.category == "regressions" %}
-  <a href=""><div class="post-title">{{ post.title }}</div></a>
+    <li>
+      <a href="">
+        <div class="post-title">{{ post.title }}</div>
+      </a>
+    </li>
 {% endif %}
 {% endfor %}
+  </ul>
 </div>
 
 <div class="posts">

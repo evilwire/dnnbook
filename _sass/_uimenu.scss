@@ -7,8 +7,10 @@
   height: 100%;
   top: 0;
   left: 0;
-  padding: 1em;
+  padding: 1em 0.5em;
   color: #aaa;
+  background: white;
+  z-index: 1000;
 
   .menu-item {
     cursor: pointer;
@@ -18,4 +20,7 @@
     }
   }
 
+  .menu-item.active {
+    color: #09f;
+  }
 }
