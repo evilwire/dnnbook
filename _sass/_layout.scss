@@ -8,6 +8,12 @@
   padding-right: 1.5rem;
   margin-left:  auto;
   margin-right: auto;
+  -webkit-transition: left 0.5s;
+  transition: left 0.3s; 
+
+  position: relative;
+  left: 0px;
+
 }
 
 footer {
