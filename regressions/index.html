@@ -3,6 +3,29 @@ layout: default
 title: Home
 ---
 
+<!--
+  UI Menu for some readability boosts
+-->
+<div id="ui-menu">
+  <div class="menu-item toc-toggles">
+    <i class="material-icons">menu</i>
+  </div>
+</div>
+
+<!-- 
+  Table of Content goes here:
+
+  Auto generated content
+-->
+<div class="toc closed">
+  <h3 class="title">ToC</h3>
+{% for post in site.posts %}
+{% if post.category == "regressions" %}
+  <a href=""><div class="post-title">{{ post.title }}</div></a>
+{% endif %}
+{% endfor %}
+</div>
+
 <div class="posts">
   {% for post in site.posts %}
     {% if post.category == "regressions" %}
