@@ -37,8 +37,8 @@ a {
   text-decoration: none;
 
   // `:focus` is linked to `:hover` for basic accessibility
-  &:hover,
-  &:focus {
+  &:hover h1,
+  &:focus h1 {
   }
 
   strong {
