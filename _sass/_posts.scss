@@ -13,6 +13,10 @@
 .post-title,
 .post-title a {
   color: #303030;
+
+  &:hover {
+    color: #078;
+  }
 }
 .page-title,
 .post-title {
@@ -50,7 +54,7 @@
     }
 
     a:hover {
-      color: #268bd2;
+      color: #078;
       text-decoration: none;
 
       small {
